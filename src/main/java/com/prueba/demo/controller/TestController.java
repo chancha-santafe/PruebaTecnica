@@ -9,12 +9,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import com.prueba.demo.controller.service.TestService;
 import com.prueba.demo.model.Input;
+import reactor.core.publisher.Mono;
 
 
 /**
  * 
- * @author User.
- * API REST que tambien resuelve las consignas.
+ * @author User. API REST que tambien resuelve las consignas.
  *
  */
 @RestController
@@ -38,9 +38,9 @@ public class TestController {
    * @return {@link String}
    */
   @GetMapping("/loadList")
-  public String getImput(@RequestBody Input input) {
+  public Mono<String> getImput(@RequestBody Input input) {
     this.input.getListNumber().addAll(input.getListNumber());
-    return this.input.getListNumber().toString();
+    return Mono.just(this.input.getListNumber().toString());
   }
 
 
@@ -51,8 +51,8 @@ public class TestController {
    * @return {@link Integer}
    */
   @GetMapping("/operation/{operation}")
-  public Integer sendOperation(@PathVariable String operation) {
-    return testService.calculate(operation, input);
+  public Mono<Integer> sendOperation(@PathVariable String operation) {
+    return Mono.just(testService.calculate(operation, input));
   }
 
 
