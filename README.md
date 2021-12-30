@@ -1,4 +1,4 @@
-Protecto - Prueba Tecnica
+Proyecto - Prueba Tecnica
 
 El proyecto esta resuelto por 2 formaas
 
