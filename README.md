@@ -1,9 +1,9 @@
 Proyecto - Prueba Tecnica
 
-El proyecto esta resuelto por 2 formaas
+El proyecto esta resuelto por 2 formas
 
-1.- Servlet
-2.- RestController
+1.- Servlet.
+2.- RestController.
 
 
 Solucion 1: Servlet:
